@@ -37,37 +37,51 @@
 // f(x) = f(x - d) если x%c > 0
 // f(x) = f(x - d) + f(x/c) если x%c == 0
 
+import java.util.HashMap;
+
 public class Main {
     public static int func_calc(int a, int b, int c, int d) {
         int x = 0;
         if(b == a) {
+            System.out.println(1);
             return 1;
         }
         if(b%c == 0){
             x = func_calc(a, b-d, c, d) + func_calc(a, b/c, c, d);
+            System.out.println(2);
         }
         if(b%c > 0) {
             x = func_calc(a, b-d, c, d);
+            System.out.println(3);
         }
         return x;
     }
 
+    public static int create_map(int a, int b, int c, int d) {
+        int[] arr = new int[b-a];
+        for(int i = 0; i < b-a; i++){
+            arr[i] = a + i;
+        }
+        HashMap<Integer, Integer> hash_map = new HashMap<Integer, Integer>();
+        return 1;
+    }
+
     public static void main(String[] args) {
-        int solution = func_calc(2, 7, 2, 1);
-        System.out.println(solution);
-        solution = func_calc(3, 27, 3, 2);
-        System.out.println(solution);
-        solution = func_calc(30, 345, 5, 6);
-        System.out.println(solution);
-//        solution = func_calc(30, 345, 2, 1);
+//        int solution = func_calc(2, 7, 2, 1);
 //        System.out.println(solution);
+//        solution = func_calc(3, 27, 3, 2);
+//        System.out.println(solution);
+//        solution = func_calc(30, 345, 5, 6);
+//        System.out.println(solution);
+        int solution = func_calc(30, 345, 2, 1);
+        System.out.println(solution);
 //        solution = func_calc(22, 333, 3, 1);
 //        System.out.println(solution);
-        solution = func_calc(55, 555, 5, 2);
-        System.out.println(solution);
-        solution = func_calc(22, 2022, 11, 56);
-        System.out.println(solution);
-        solution = func_calc(22, 2022, 11, 10);
-        System.out.println(solution);
+//        solution = func_calc(55, 555, 5, 2);
+//        System.out.println(solution);
+//        solution = func_calc(22, 2022, 11, 56);
+//        System.out.println(solution);
+//        solution = func_calc(22, 2022, 11, 10);
+//        System.out.println(solution);
     }
 }
