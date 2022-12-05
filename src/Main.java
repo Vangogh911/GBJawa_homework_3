@@ -58,11 +58,21 @@ public class Main {
     }
 
     public static int create_map(int a, int b, int c, int d) {
+        int buff = 0;
         int[] arr = new int[b-a];
         for(int i = 0; i < b-a; i++){
             arr[i] = a + i;
         }
         HashMap<Integer, Integer> hash_map = new HashMap<Integer, Integer>();
+        hash_map.put(a, 1);
+        for(int j = 1; j < b-a; j++){
+            if (arr[j]%c == 0 && arr[j]/c > a){
+                buff += hash_map.get(arr[j]/c);
+                buff += hash_map.get(arr[j] - d);
+                hash_map.put(arr[j], buff);
+            }
+        }
+
         return 1;
     }
 
