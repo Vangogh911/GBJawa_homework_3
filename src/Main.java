@@ -54,15 +54,15 @@ public class Main {
         return x;
     }
 
-    public static int create_map(int a, int b, int c, int d) {
+    public static long create_map(int a, int b, int c, int d) {
         int length = b-a+1;
         int[] arr = new int[length];
         for(int i = 0; i < length; i++){
             arr[i] = a + i;
         }
         int buf = a;
-        HashMap<Integer, Integer> hash_map = new HashMap<Integer, Integer>();
-        hash_map.put(a, 1);
+        HashMap<Integer, Long> hash_map = new HashMap<Integer, Long>();
+        hash_map.put(a, 1L);
         System.out.print(a);
         System.out.print(" ");
         System.out.println(1);
@@ -70,29 +70,42 @@ public class Main {
             if (arr[j]%c == 0){
                 if (arr[j]/c >= a) {
                     hash_map.put(arr[j], hash_map.get(arr[j] / c) + hash_map.get(arr[j] - d));
+                    if (hash_map.get(arr[j] / c) + hash_map.get(arr[j] - d) > 0){
+                        buf = arr[j];
+                    }
                     System.out.print(arr[j]);
                     System.out.print(" a1 ");
                     System.out.print(buf);
                     System.out.print(" a1 ");
                 } else {
-                    hash_map.put(arr[j], hash_map.get(arr[j] - d));
+                    if (arr[j] - d >= a) {
+                        hash_map.put(arr[j], hash_map.get(arr[j] - d));
+                        if (hash_map.get(arr[j] - d) > 0){
+                            buf = arr[j];
+                        }
+                    } else {
+                        hash_map.put(arr[j], 0L);
+                    }
                     System.out.print(arr[j]);
                     System.out.print(" a2 ");
                     System.out.print(buf);
                     System.out.print(" a2 ");
                 }
                 System.out.println(hash_map.get(arr[j]));
-                buf = arr[j];
             } else if (arr[j]%c > 0 && arr[j] - d == buf) {
-                hash_map.put(arr[j], hash_map.get(arr[j] - d));
-                System.out.print(arr[j]);
-                System.out.print(" b ");
-                System.out.print(buf);
-                System.out.print(" b ");
-                System.out.println(hash_map.get(arr[j]));
-                buf = arr[j];
+                if (arr[j] - d >= a) {
+                    hash_map.put(arr[j], hash_map.get(arr[j] - d));
+                    System.out.print(arr[j]);
+                    System.out.print(" b ");
+                    System.out.print(buf);
+                    System.out.print(" b ");
+                    System.out.println(hash_map.get(arr[j]));
+                    buf = arr[j];
+                } else {
+                    hash_map.put(arr[j], 0L);
+                }
             } else {
-                hash_map.put(arr[j], 0);
+                hash_map.put(arr[j], 0L);
                 System.out.print(arr[j]);
                 System.out.print(" c ");
                 System.out.print(buf);
@@ -105,11 +118,11 @@ public class Main {
 
     public static void main(String[] args) {
 //        //        a: 2 b: 7 c: 2 d: 1 -> 3
-//        int solution = create_map(2, 7, 2, 1);
+//        long solution = create_map(2, 7, 2, 1);
 //        System.out.println(solution);
-        //        a: 3 b: 27 c: 3 d: 2 -> 6
-        int solution = create_map(3, 27, 3, 2);
-        System.out.println(solution);
+//        //        a: 3 b: 27 c: 3 d: 2 -> 6
+//        int solution = create_map(3, 27, 3, 2);
+//        System.out.println(solution);
 //        //        a: 30 b: 345 c: 5 d: 6 -> 0
 //        int solution = create_map(30, 345, 5, 6);
 //        System.out.println(solution);
@@ -132,13 +145,13 @@ public class Main {
 //        int solution = create_map(22, 2022, 3, 1);
 //        System.out.println(solution);
 //        //        a: 22 b: 20220 c: 3 d: 1 -> 535173226980
-//        int solution = create_map(22, 20220, 3, 1);
+//        long solution = create_map(22, 20220, 3, 1);
 //        System.out.println(solution);
 //        //        a: 1 b: 1111 c: 2 d: 1 -> 3990330794
-//        int solution = create_map(1, 1111, 2, 1);
+//        long solution = create_map(1, 1111, 2, 1);
 //        System.out.println(solution);
 //        //        a: 1 b: 11111 c: 2 d: 1 -> 606408167570737286
-//        int solution = create_map(1, 11111, 2, 1);
+//        long solution = create_map(1, 11111, 2, 1);
 //        System.out.println(solution);
     }
 }
