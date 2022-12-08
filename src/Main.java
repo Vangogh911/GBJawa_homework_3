@@ -63,57 +63,57 @@ public class Main {
         int buf = a;
         HashMap<Integer, Integer> hash_map = new HashMap<Integer, Integer>();
         hash_map.put(a, 1);
-        System.out.print(a);
-        System.out.print(" ");
-        System.out.println(1);
+//        System.out.print(a);
+//        System.out.print(" ");
+//        System.out.println(1);
         for(int j = 1; j < length; j++){
             if (arr[j]%c == 0 && arr[j]/c >= a){
                 hash_map.put(arr[j], hash_map.get(arr[j]/c) + hash_map.get(arr[j] - d));
                 buf = arr[j];
-                System.out.print(arr[j]);
-                System.out.print(" a ");
-                System.out.println(hash_map.get(arr[j]));
+//                System.out.print(arr[j]);
+//                System.out.print(" a ");
+//                System.out.println(hash_map.get(arr[j]));
             } else if (arr[j]%a > 0 && arr[j] - d == buf) {
                 hash_map.put(arr[j], hash_map.get(arr[j] - d));
                 buf = arr[j];
-                System.out.print(arr[j]);
-                System.out.print(" b ");
-                System.out.println(hash_map.get(arr[j]));
+//                System.out.print(arr[j]);
+//                System.out.print(" b ");
+//                System.out.println(hash_map.get(arr[j]));
             } else {
                 hash_map.put(arr[j], 0);
-                System.out.print(arr[j]);
-                System.out.print(" c ");
-                System.out.println(hash_map.get(arr[j]));
+//                System.out.print(arr[j]);
+//                System.out.print(" c ");
+//                System.out.println(hash_map.get(arr[j]));
             }
         }
         return hash_map.get(b);
     }
 
     public static void main(String[] args) {
-//        //        a: 2 b: 7 c: 2 d: 1 -> 3
-//        int solution = create_map(2, 7, 2, 1);
-//        System.out.println(solution);
-//        //        a: 3 b: 27 c: 3 d: 2 -> 6
-//        solution = create_map(3, 27, 3, 2);
-//        System.out.println(solution);
-//        //        a: 30 b: 345 c: 5 d: 6 -> 0
-//        solution = create_map(30, 345, 5, 6);
-//        System.out.println(solution);
-        //        a: 30 b: 345 c: 2 d: 1 -> 7047
-        int solution = create_map(30, 345, 2, 1);
+        //        a: 2 b: 7 c: 2 d: 1 -> 3
+        int solution = create_map(2, 7, 2, 1);
         System.out.println(solution);
-//        //        a: 22 b: 333 c: 3 d: 1 -> 467
-//        solution = create_map(22, 333, 3, 1);
-//        System.out.println(solution);
-//        //        a: 55 b: 555 c: 5 d: 2 -> 30
-//        solution = create_map(55, 555, 5, 2);
-//        System.out.println(solution);
-//        //        a: 22 b: 2022 c: 11 d: 56 -> 0
-//        solution = create_map(22, 2022, 11, 56);
-//        System.out.println(solution);
-//        //        a: 22 b: 2022 c: 11 d: 10 -> 18
-//        solution = create_map(22, 2022, 11, 10);
-//        System.out.println(solution);
+        //        a: 3 b: 27 c: 3 d: 2 -> 6
+        solution = create_map(3, 27, 3, 2);
+        System.out.println(solution);
+        //        a: 30 b: 345 c: 5 d: 6 -> 0
+        solution = create_map(30, 345, 5, 6);
+        System.out.println(solution);
+        //        a: 30 b: 345 c: 2 d: 1 -> 7047
+        solution = create_map(30, 345, 2, 1);
+        System.out.println(solution);
+        //        a: 22 b: 333 c: 3 d: 1 -> 467
+        solution = create_map(22, 333, 3, 1);
+        System.out.println(solution);
+        //        a: 55 b: 555 c: 5 d: 2 -> 30
+        solution = create_map(55, 555, 5, 2);
+        System.out.println(solution);
+        //        a: 22 b: 2022 c: 11 d: 56 -> 0
+        solution = create_map(22, 2022, 11, 56);
+        System.out.println(solution);
+        //        a: 22 b: 2022 c: 11 d: 10 -> 18
+        solution = create_map(22, 2022, 11, 10);
+        System.out.println(solution);
 //        //        a: 22 b: 2022 c: 3 d: 1 -> 763827
 //        solution = create_map(22, 2022, 3, 1);
 //        System.out.println(solution);
