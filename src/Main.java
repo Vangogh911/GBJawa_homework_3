@@ -42,20 +42,6 @@ import java.util.HashMap;
 import java.util.Objects;
 
 public class Main {
-    public static int func_calc(int a, int b, int c, int d) {
-        int x = 0;
-        if(b == a) {
-            return 1;
-        }
-        if(b%c == 0){
-            x = func_calc(a, b-d, c, d) + func_calc(a, b/c, c, d);
-        }
-        if(b%c > 0) {
-            x = func_calc(a, b-d, c, d);
-        }
-        return x;
-    }
-
     public static void calc_path(int a, int b, int c, int d, HashMap<Integer, Long> hash_map) {
         int buf = b;
         ArrayList<String> path = new ArrayList<>();
@@ -114,41 +100,41 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//        //        a: 2 b: 7 c: 2 d: 1 -> 3
-//        long solution = create_map(2, 7, 2, 1);
-//        System.out.println(solution);
-//        //        a: 3 b: 27 c: 3 d: 2 -> 6
-//        solution = create_map(3, 27, 3, 2);
-//        System.out.println(solution);
-//        //        a: 30 b: 345 c: 5 d: 6 -> 0
-//        solution = create_map(30, 345, 5, 6);
-//        System.out.println(solution);
-//        //        a: 30 b: 345 c: 2 d: 1 -> 7047
-//        solution = create_map(30, 345, 2, 1);
-//        System.out.println(solution);
-        //        a: 22 b: 333 c: 3 d: 1 -> 467
-        long solution = create_map(22, 333, 3, 1);
+        //        a: 2 b: 7 c: 2 d: 1 -> 3
+        long solution = create_map(2, 7, 2, 1);
         System.out.println(solution);
-//        //        a: 55 b: 555 c: 5 d: 2 -> 30
-//        solution = create_map(55, 555, 5, 2);
-//        System.out.println(solution);
-//        //        a: 22 b: 2022 c: 11 d: 56 -> 0
-//        solution = create_map(22, 2022, 11, 56);
-//        System.out.println(solution);
-//        //        a: 22 b: 2022 c: 11 d: 10 -> 18
-//        solution = create_map(22, 2022, 11, 10);
-//        System.out.println(solution);
-//        //        a: 22 b: 2022 c: 3 d: 1 -> 763827
-//        solution = create_map(22, 2022, 3, 1);
-//        System.out.println(solution);
-//        //        a: 22 b: 20220 c: 3 d: 1 -> 535173226980
-//        solution = create_map(22, 20220, 3, 1);
-//        System.out.println(solution);
-//        //        a: 1 b: 1111 c: 2 d: 1 -> 3990330794
-//        solution = create_map(1, 1111, 2, 1);
-//        System.out.println(solution);
-//        //        a: 1 b: 11111 c: 2 d: 1 -> 606408167570737286
-//        solution = create_map(1, 11111, 2, 1);
-//        System.out.println(solution);
+        //        a: 3 b: 27 c: 3 d: 2 -> 6
+        solution = create_map(3, 27, 3, 2);
+        System.out.println(solution);
+        //        a: 30 b: 345 c: 5 d: 6 -> 0
+        solution = create_map(30, 345, 5, 6);
+        System.out.println(solution);
+        //        a: 30 b: 345 c: 2 d: 1 -> 7047
+        solution = create_map(30, 345, 2, 1);
+        System.out.println(solution);
+        //        a: 22 b: 333 c: 3 d: 1 -> 467
+        solution = create_map(22, 333, 3, 1);
+        System.out.println(solution);
+        //        a: 55 b: 555 c: 5 d: 2 -> 30
+        solution = create_map(55, 555, 5, 2);
+        System.out.println(solution);
+        //        a: 22 b: 2022 c: 11 d: 56 -> 0
+        solution = create_map(22, 2022, 11, 56);
+        System.out.println(solution);
+        //        a: 22 b: 2022 c: 11 d: 10 -> 18
+        solution = create_map(22, 2022, 11, 10);
+        System.out.println(solution);
+        //        a: 22 b: 2022 c: 3 d: 1 -> 763827
+        solution = create_map(22, 2022, 3, 1);
+        System.out.println(solution);
+        //        a: 22 b: 20220 c: 3 d: 1 -> 535173226980
+        solution = create_map(22, 20220, 3, 1);
+        System.out.println(solution);
+        //        a: 1 b: 1111 c: 2 d: 1 -> 3990330794
+        solution = create_map(1, 1111, 2, 1);
+        System.out.println(solution);
+        //        a: 1 b: 11111 c: 2 d: 1 -> 606408167570737286
+        solution = create_map(1, 11111, 2, 1);
+        System.out.println(solution);
     }
 }
